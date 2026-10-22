@@ -473,7 +473,7 @@ export default function App() {
                     />
                   ) : (
                     <div className="w-full h-full flex items-center justify-center text-xs text-purple-300/50">
-                      [ Insira a foto do projeto aqui ]
+                      [ ja eu coloco a ft ]
                     </div>
                   )}
                 </div>
