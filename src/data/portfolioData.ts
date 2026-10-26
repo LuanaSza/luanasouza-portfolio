@@ -11,12 +11,13 @@ export interface ProjectItem {
   tags: string[];
   github: string;
   demo: string;
+  image: string;
 }
 
 export const personalInfo = {
   name: "Luana Souza",
-  role: "Engenheira de Software | Desenvolvedora Full Stack",
-  subtitle: "Desenvolvedora Full Stack & Engenheira de Software",
+  role: "Desenvolvedora de Software | Full Stack",
+  subtitle: "Desenvolvedora de Software | Full Stack",
   description:
     "Uma jornada pessoal através de tecnologia, design e código, criando experiências web funcionais e elegantes.",
   location: "Parnaíba, PI",
@@ -57,28 +58,31 @@ export const trajetoria: TrajetoriaItem[] = [
 
 export const projects: ProjectItem[] = [
   {
+    title: "Entrelinhas",
+    description:
+      "Plataforma web pessoal para publicação e organização de ensaios, prosas e reflexões.",
+    tags: ["React", "TypeScript", "Tailwind CSS"],
+    github: "https://github.com/LuanaSza/Entrelinhas_sza.git",
+    demo: "https://entrelinhas-sza.vercel.app/",
+    image: "/entrelinhas.png", // <--- Aqui
+  },
+  {
     title: "InflaBrasil",
     description:
       "Aplicação web open-source para acompanhamento e análise de métricas de inflação.",
     tags: ["React", "TypeScript", "Tailwind CSS"],
-    github: "#",
-    demo: "#",
+    github: "https://github.com/LuanaSza/Infla-Brazil.git",
+    demo: "",
+    image: "/infla.png", // <--- Nome exatamente igual ao da pasta public
   },
   {
-    title: "Sistema de Gestão PetShop",
+    title: "Plataforma OmnisBlue — RGM Tecnologia",
     description:
-      "Aplicação desktop orientada a objetos desenvolvida em Java com interface Swing e banco SQLite.",
-    tags: ["Java", "Swing", "SQLite", "MVC"],
+      "Atuação no desenvolvimento e evolução do ecossistema SaaS da OmnisBlue, incluindo implementação de novas funcionalidades, ajustes na estrutura de banco de dados, integração de APIs e criação de dashboards de BI para governança e gestão de riscos.",
+    tags: ["PHP", "Scriptcase", "Python", "MySQL", "JavaScript"],
     github: "#",
-    demo: "#",
-  },
-  {
-    title: "Módulo de Compliance & LGPD",
-    description:
-      "Sistema para identificação de conflitos de interesse, gerenciamento de riscos e conformidade NR1.",
-    tags: ["PHP", "MySQL", "Scriptcase", "JavaScript"],
-    github: "#",
-    demo: "#",
+    demo: "https://omnisblue-sza.vercel.app/",
+    image: "/omnisblue.jpeg", // <--- Extensão .jpeg
   },
 ];
 
