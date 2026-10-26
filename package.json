@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@emailjs/browser": "^5.0.3",
     "lucide-react": "^1.59.0"
   }
 }
