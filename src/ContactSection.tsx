@@ -3,7 +3,7 @@ import { Mail, MapPin, Send, ArrowRight, Code2, Sparkles, Globe, CheckCircle2, A
 import emailjs from '@emailjs/browser';
 import { personalInfo } from './data/portfolioData';
 
-// 🔑 Credenciais do EmailJS integradas
+
 const EMAILJS_SERVICE_ID = 'service_3tvtyyk';
 const EMAILJS_TEMPLATE_ID = 'template_7ipf2pq';
 const EMAILJS_PUBLIC_KEY = 'dZCJv9P0Uz-bEr7ql';
@@ -255,30 +255,37 @@ export const ContactSection: React.FC = () => {
         </div>
 
         {/* Rodapé Interno da Seção */}
-        <div className="pt-8 border-t border-purple-900/30 flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="flex items-center gap-4">
-            <div className="p-3 rounded-xl bg-purple-950/40 border border-purple-800/30 text-purple-400">
-              <Code2 className="w-6 h-6" />
-            </div>
-            <div>
-              <span className="text-[10px] uppercase tracking-widest text-purple-400 font-semibold">NOS VEMOS EM BREVE</span>
-              <h4 className="text-lg font-bold text-white">
-                Juntos, podemos construir <span className="text-purple-400">algo incrível.</span>
-              </h4>
-            </div>
-          </div>
+ <div className="pt-8 border-t border-purple-800/30 flex flex-col md:flex-row items-center justify-between gap-6 relative">
+  {/* Linha decorativa com gradiente sutil no topo */}
+  <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-purple-500/30 to-transparent" />
 
-          <div className="flex flex-wrap gap-2">
-            {tags.map((tag, idx) => (
-              <span
-                key={idx}
-                className="text-xs px-3 py-1 rounded-md bg-[#130f23] border border-purple-900/40 text-purple-300/80"
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
-        </div>
+  {/* Lado Esquerdo: Ícone + Mensagem */}
+  <div className="flex flex-col sm:flex-row items-center text-center sm:text-left gap-4">
+    <div className="p-3.5 rounded-xl bg-purple-950/40 border border-purple-800/40 text-purple-400 shadow-[0_0_15px_rgba(168,85,247,0.15)] shrink-0">
+      <Code2 className="w-6 h-6" />
+    </div>
+    <div className="flex flex-col">
+      <span className="text-[10px] uppercase tracking-widest text-purple-400 font-semibold mb-0.5">
+        NOS VEMOS EM BREVE
+      </span>
+      <h4 className="text-lg font-bold text-white tracking-tight">
+        Juntos, podemos construir <span className="text-purple-400 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-fuchsia-400">algo incrível.</span>
+      </h4>
+    </div>
+  </div>
+
+  {/* Lado Direito: Tags com Animação Hover */}
+  <div className="flex flex-wrap items-center justify-center md:justify-end gap-2">
+    {tags.map((tag, idx) => (
+      <span
+        key={idx}
+        className="text-xs px-3 py-1.5 rounded-lg bg-[#130f23] border border-purple-900/40 text-purple-300/80 transition-all duration-300 hover:border-purple-500/50 hover:text-purple-200 hover:bg-purple-950/50 hover:shadow-[0_0_10px_rgba(168,85,247,0.2)] cursor-default select-none"
+      >
+        {tag}
+      </span>
+    ))}
+  </div>
+</div>
 
       </div>
     </section>

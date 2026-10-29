@@ -81,7 +81,7 @@ export const projects: ProjectItem[] = [
       "Atuação no desenvolvimento e evolução do ecossistema SaaS da OmnisBlue, incluindo implementação de novas funcionalidades, ajustes na estrutura de banco de dados, integração de APIs e criação de dashboards de BI para governança e gestão de riscos.",
     tags: ["PHP", "Scriptcase", "Python", "MySQL", "JavaScript"],
     github: "#",
-    demo: "https://omnisblue-sza.vercel.app/",
+    demo: "https://omnisblue.com/",
     image: "/omnisblue.jpeg", // <--- Extensão .jpeg
   },
 ];
