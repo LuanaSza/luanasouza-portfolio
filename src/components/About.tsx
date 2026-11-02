@@ -30,12 +30,10 @@ export function About() {
           </p>
 
           <p className="text-base leading-relaxed font-light text-gray-400">
-            Sou ambiciosa, curiosa e movida pela vontade de aprender, evoluir
-            e construir meu próprio caminho. Além da programação, sou
-            apaixonada por livros e escrita, e criei a Entrelinhas, um espaço
-            onde compartilho ideias, pensamentos e reflexões. Acredito no poder
-            da tecnologia para transformar ideias em soluções e impactar
-            vidas.
+            Sou ambiciosa, curiosa e movida pela vontade de aprender, evoluir e construir meu próprio caminho.
+             Tenho interesse em explorar novas tecnologias, 
+            enfrentar desafios e aprimorar minhas habilidades. 
+            Acredito no potencial da tecnologia para transformar ideias em soluções e gerar impacto.
           </p>
         </div>
       </div>
