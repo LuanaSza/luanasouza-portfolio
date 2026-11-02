@@ -21,9 +21,9 @@ export function Experiencia() {
             <div className="flex items-start justify-between mb-4">
               <div>
                 <h4 className="text-xl font-bold font-serif mb-1 text-white">
-                  Desenvolvedora de Software Júnior
+                  Estagiária
                 </h4>
-                <p className="text-purple-400 font-medium text-sm">OmnisBlue</p>
+                <p className="text-purple-400 font-medium text-sm">OmnisBlue | Plataforma de LGPD, Compliance e Due Diligence</p>
               </div>
               <div className="w-10 h-10 rounded-xl bg-purple-900/50 border border-purple-500/40 flex items-center justify-center text-purple-300 shrink-0">
                 <Code2 size={20} />
