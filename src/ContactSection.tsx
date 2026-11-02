@@ -1,8 +1,20 @@
 import React, { useState } from 'react';
-import { Mail, MapPin, Send, ArrowRight, Code2, Sparkles, Globe, CheckCircle2, AlertCircle } from 'lucide-react';
+import { Mail, MapPin, Send, ArrowRight, Code2, Sparkles, Globe, CheckCircle2, AlertCircle, Linkedin, Github, Instagram as InstagramIcon } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 import { personalInfo } from './data/portfolioData';
 
+const WhatsappIcon = (props: React.SVGProps<SVGSVGElement>) => (
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
+    <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+  </svg>
+);
+
+const ThreadsIcon = (props: React.SVGProps<SVGSVGElement>) => (
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
+    <path d="M12 2a10 10 0 1 0 10 10c0-5.523-4.477-10-10-10zm0 14a4 4 0 1 1 0-8 4 4 0 0 1 0 8z"></path>
+    <path d="M15.5 10.5a3.5 3.5 0 0 0-3-3 3.5 3.5 0 0 0-3.5 3.5c0 1.25.68 2.34 1.7 2.95"></path>
+  </svg>
+);
 
 const EMAILJS_SERVICE_ID = 'service_3tvtyyk';
 const EMAILJS_TEMPLATE_ID = 'template_7ipf2pq';
@@ -28,7 +40,6 @@ export const ContactSection: React.FC = () => {
     setLoading(true);
     setStatus('idle');
 
-    // Mapeamento dos parâmetros para o Template do EmailJS
     const templateParams = {
       from_name: formData.nome,
       from_email: formData.email,
@@ -83,8 +94,6 @@ export const ContactSection: React.FC = () => {
       value: personalInfo.location
     }
   ];
-
-  const tags = ['#desenvolvimento', '#tecnologia', '#projetos', '#oportunidades'];
 
   return (
     <section id="contato" className="min-h-screen bg-[#0b0813] text-gray-200 px-6 py-12 md:px-16 lg:px-24 font-sans selection:bg-purple-500 selection:text-white">
@@ -145,7 +154,6 @@ export const ContactSection: React.FC = () => {
                       </div>
                     </div>
 
-                    {/* Exibe a setinha somente se o card possuir um link de destino */}
                     {isLink && (
                       <ArrowRight className="w-4 h-4 text-gray-500 group-hover:text-purple-400 group-hover:translate-x-1 transition-all" />
                     )}
@@ -225,7 +233,6 @@ export const ContactSection: React.FC = () => {
                 />
               </div>
 
-              {/* Feedback visual de sucesso */}
               {status === 'success' && (
                 <div className="flex items-center gap-2 p-3 rounded-lg bg-emerald-950/60 border border-emerald-500/40 text-emerald-300 text-xs font-medium">
                   <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
@@ -233,7 +240,6 @@ export const ContactSection: React.FC = () => {
                 </div>
               )}
 
-              {/* Feedback visual de erro */}
               {status === 'error' && (
                 <div className="flex items-center gap-2 p-3 rounded-lg bg-rose-950/60 border border-rose-500/40 text-rose-300 text-xs font-medium">
                   <AlertCircle className="w-4 h-4 text-rose-400 shrink-0" />
@@ -254,38 +260,87 @@ export const ContactSection: React.FC = () => {
           </div>
         </div>
 
-        {/* Rodapé Interno da Seção */}
- <div className="pt-8 border-t border-purple-800/30 flex flex-col md:flex-row items-center justify-between gap-6 relative">
-  {/* Linha decorativa com gradiente sutil no topo */}
-  <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-purple-500/30 to-transparent" />
+        {/* Rodapé Atualizado (Estilo Minimalista L/S + Ícones GitHub, LinkedIn, WhatsApp, Instagram e Threads com Glow Roxo) */}
+        <div className="pt-8 border-t border-purple-900/30 flex flex-col md:flex-row items-center justify-between gap-6 relative">
+          
+          {/* Linha decorativa superior */}
+          <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-purple-500/30 to-transparent" />
 
-  {/* Lado Esquerdo: Ícone + Mensagem */}
-  <div className="flex flex-col sm:flex-row items-center text-center sm:text-left gap-4">
-    <div className="p-3.5 rounded-xl bg-purple-950/40 border border-purple-800/40 text-purple-400 shadow-[0_0_15px_rgba(168,85,247,0.15)] shrink-0">
-      <Code2 className="w-6 h-6" />
-    </div>
-    <div className="flex flex-col">
-      <span className="text-[10px] uppercase tracking-widest text-purple-400 font-semibold mb-0.5">
-        NOS VEMOS EM BREVE
-      </span>
-      <h4 className="text-lg font-bold text-white tracking-tight">
-        Juntos, podemos construir <span className="text-purple-400 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-fuchsia-400">algo incrível.</span>
-      </h4>
-    </div>
-  </div>
+          {/* Lado Esquerdo: Ícone com o seu Logotipo L/S minimalista */}
+          <div className="flex items-center gap-4">
+            <div className="p-3 rounded-xl bg-purple-950/40 border border-purple-800/40 text-purple-400 shadow-[0_0_15px_rgba(168,85,247,0.15)] shrink-0 flex items-center justify-center">
+              <Code2 className="w-5 h-5" />
+            </div>
+          </div>
 
-  {/* Lado Direito: Tags com Animação Hover */}
-  <div className="flex flex-wrap items-center justify-center md:justify-end gap-2">
-    {tags.map((tag, idx) => (
-      <span
-        key={idx}
-        className="text-xs px-3 py-1.5 rounded-lg bg-[#130f23] border border-purple-900/40 text-purple-300/80 transition-all duration-300 hover:border-purple-500/50 hover:text-purple-200 hover:bg-purple-950/50 hover:shadow-[0_0_10px_rgba(168,85,247,0.2)] cursor-default select-none"
-      >
-        {tag}
-      </span>
-    ))}
-  </div>
-</div>
+          {/* Centro: Copyright com linhas laterais */}
+          <div className="flex items-center gap-4 w-full md:w-auto justify-center">
+            <div className="h-[1px] bg-gradient-to-r from-transparent to-purple-900/50 flex-1 md:w-20"></div>
+            <p className="text-xs text-gray-400 whitespace-nowrap">
+              © 2026. Todos os direitos reservados.
+            </p>
+            <div className="h-[1px] bg-gradient-to-l from-transparent to-purple-900/50 flex-1 md:w-20"></div>
+          </div>
+
+          {/* Lado Direito: Ícones das Redes Sociais com efeito Glow Roxo */}
+          <div className="flex items-center gap-3">
+            {/* GitHub */}
+            <a
+              href="https://github.com/LuanaSza"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub"
+              className="p-2.5 rounded-xl border border-purple-900/40 bg-purple-950/20 text-purple-300 hover:text-white hover:border-purple-500 hover:shadow-[0_0_12px_rgba(168,85,247,0.4)] transition-all duration-300"
+            >
+              <Github size={18} />
+            </a>
+
+            {/* LinkedIn */}
+            <a
+              href="https://linkedin.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+              className="p-2.5 rounded-xl border border-purple-900/40 bg-purple-950/20 text-purple-300 hover:text-white hover:border-purple-500 hover:shadow-[0_0_12px_rgba(168,85,247,0.4)] transition-all duration-300"
+            >
+              <Linkedin size={18} />
+            </a>
+
+            {/* WhatsApp */}
+            <a
+              href="https://wa.me/558695493913"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="WhatsApp"
+              className="p-2.5 rounded-xl border border-purple-900/40 bg-purple-950/20 text-purple-300 hover:text-white hover:border-purple-500 hover:shadow-[0_0_12px_rgba(168,85,247,0.4)] transition-all duration-300"
+            >
+              <WhatsappIcon />
+            </a>
+
+            {/* Instagram */}
+            <a
+              href="https://www.instagram.com/_.luanasza?obrf=MTF0MHdxdzY5b2RuOQ=="
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+              className="p-2.5 rounded-xl border border-purple-900/40 bg-purple-950/20 text-purple-300 hover:text-white hover:border-purple-500 hover:shadow-[0_0_12px_rgba(168,85,247,0.4)] transition-all duration-300"
+            >
+              <InstagramIcon size={18} />
+            </a>
+
+            {/* Threads */}
+            <a
+              href="https://www.threads.com/@lua.ssz"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Threads"
+              className="p-2.5 rounded-xl border border-purple-900/40 bg-purple-950/20 text-purple-300 hover:text-white hover:border-purple-500 hover:shadow-[0_0_12px_rgba(168,85,247,0.4)] transition-all duration-300"
+            >
+              <ThreadsIcon />
+            </a>
+          </div>
+
+        </div>
 
       </div>
     </section>

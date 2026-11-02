@@ -64,7 +64,7 @@ export const projects: ProjectItem[] = [
     tags: ["React", "TypeScript", "Tailwind CSS"],
     github: "https://github.com/LuanaSza/Entrelinhas_sza.git",
     demo: "https://entrelinhas-sza.vercel.app/",
-    image: "/entrelinhas.png", // <--- Aqui
+    image: "/entrelinhas.png",
   },
   {
     title: "InflaBrasil",
@@ -73,7 +73,7 @@ export const projects: ProjectItem[] = [
     tags: ["React", "TypeScript", "Tailwind CSS"],
     github: "https://github.com/LuanaSza/Infla-Brazil.git",
     demo: "",
-    image: "/infla.png", // <--- Nome exatamente igual ao da pasta public
+    image: "/infla.png", 
   },
   {
     title: "Plataforma OmnisBlue — RGM Tecnologia",
@@ -82,7 +82,7 @@ export const projects: ProjectItem[] = [
     tags: ["PHP", "Scriptcase", "Python", "MySQL", "JavaScript"],
     github: "#",
     demo: "https://omnisblue.com/",
-    image: "/omnisblue.jpeg", // <--- Extensão .jpeg
+    image: "/omnisblue.jpeg", 
   },
 ];
 

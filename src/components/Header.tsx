@@ -14,9 +14,6 @@ export function Header({ navItems, activeSection }: HeaderProps) {
         <div className="flex items-center justify-center w-9 h-9 rounded-xl bg-purple-950/80 border border-purple-500/40 text-purple-300 font-serif font-bold text-lg shadow-[0_0_12px_rgba(168,85,247,0.4)]">
           LS
         </div>
-        <span className="font-medium text-sm sm:text-base tracking-wide text-white">
-          Luana Souza
-        </span>
       </div>
 
       <nav className="hidden md:flex items-center gap-6 lg:gap-8 text-sm">
